@@ -5,7 +5,9 @@ The function must NOT change the original array, arr.
 */
 
 function remove(arr, index) {
-  return arr.slice(0, index).concet(arr.slice(index + 1));
+  let new1 = arr.slice();
+  new1.splice(index, 1);
+  return new1;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

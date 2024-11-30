@@ -8,10 +8,12 @@
 
 const pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-let pairsByIndex = pairsByIndexRaw.filter(function (pair) {
+let pairsByIndex = pairsByIndexRaw.filter(function (indexes) {
   return (
-    typeof pair[0] === "number" &&
-    typeof pair[1] === "number"
+    indexes &&
+    indexes.length === 2 &&
+    typeof indexes[0] === "number" &&
+    typeof indexes[1] === "number"
   );
 }); // Complete this statement
 

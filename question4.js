@@ -7,12 +7,24 @@ Write a function that:
 */
 
 function formatPercentage(arr) {
-  return arr.map((number) => {
-    if (number > 100) {
-      number = 100;
+  let final = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    let number = arr[i];
+
+    for (let j = 0; j < 1; j++) {
+      if (number > 100) {
+        number = 100;
+      }
+      number = Math.round(number * 100) / 100;
+      if (number % 1 === 0) {
+        final.push(number + "%");
+      } else {
+        final.push(number.toFixed(2) + "%");
+      }
     }
-    return number.toFixed() + "%";
-  });
+  }
+  return final;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
